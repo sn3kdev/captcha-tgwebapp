@@ -6,13 +6,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Капча</title>
    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-   <script type="application/javascript">
-      function getIP(json) {
-         document.getElementById("tg-data").value = json.ip
-      }
-    </script>
-    
-    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
    <style>
     body{
        color: var(--tg-theme-text-color);
@@ -49,7 +42,13 @@
     <p>Чтобы пройти проверку на робота, введите текст нажатой в боте кнопки в поле ниже и нажмите "Проверить"</p>
     <input type="text" id="tg-data" placeholder='Название кнопки'>
     <div id="user-ip">test</div>
+    <script type="application/javascript">
+      function getIP(json) {
+         document.getElementById("tg-data").value = json.ip
+      }
+    </script>
     <script type="text/javascript">document.getElementById("user-ip").style.display = "none";</script>
+    <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>
 <script>
     let tg = window.Telegram.WebApp; //Webapp init
